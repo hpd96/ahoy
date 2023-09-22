@@ -192,7 +192,7 @@
                     <fieldset class="mb-4">
                         <legend class="des">NTP Server</legend>
                         <div class="row mb-3">
-                            <div class="col-12 col-sm-3 my-2">NTP Server / IP</div>
+                            <div class="col-12 col-sm-3 my-2">NTP Server (hostname/IP)</div>
                             <div class="col-12 col-sm-9"><input type="text" name="ntpAddr"/></div>
                         </div>
                         <div class="row mb-3">
@@ -223,11 +223,11 @@
                     <fieldset class="mb-4">
                         <legend class="des">Sunrise & Sunset</legend>
                         <div class="row mb-3">
-                            <div class="col-12 col-sm-3 my-2">Latitude (decimal)</div>
+                            <div class="col-12 col-sm-3 my-2">Latitude (decimal degree / separator .,)</div>
                             <div class="col-12 col-sm-9"><input type="number" name="sunLat" step="any"/></div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-12 col-sm-3 my-2">Longitude (decimal)</div>
+                            <div class="col-12 col-sm-3 my-2">Longitude (decimal degree / separator .,)</div>
                             <div class="col-12 col-sm-9"><input type="number" name="sunLon" step="any"/></div>
                         </div>
                         <div class="row mb-3">
@@ -246,7 +246,7 @@
                     <fieldset class="mb-4">
                         <legend class="des">MQTT</legend>
                         <div class="row mb-3">
-                            <div class="col-12 col-sm-3 my-2">Broker / Server IP</div>
+                            <div class="col-12 col-sm-3 my-2">Broker (hostname/IP)</div>
                             <div class="col-12 col-sm-9"><input type="text" name="mqttAddr"/></div>
                         </div>
                         <div class="row mb-3">
@@ -632,7 +632,7 @@
                     })
                 });
 
-                iv.append(mlE("Name*", inp(id + "Name", obj["name"], 16, ["text"], null, "text", "[\\-\\+A-Za-z0-9.\\/#$%&=_]+", "Invalid input")));
+                iv.append(mlE("Name*", inp(id + "Name", obj["name"], 15, ["text"], null, "text", "[\\-\\+A-Za-z0-9.\\/#$%&=_]+", "Invalid input")));
 
                 for(var j of [
                     ["ModPwr", "ch_max_pwr", "Max Module Power (Wp)", 4, "[0-9]+"],
